@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{#    <h1>Tasks</h1>#}
+{#    {% if tasks %}#}
+{#        {% for task in tasks %}#}
+{#        <ul>#}
+{#           <li>{{ task.name }} : {{ task.description }} ({{ task.created_at }})</li> #}
+{#        </ul>#}
+{#        {% endfor %}#}
+{#    {% else %}#}
+{#        <p>There are no created tasks!</p>#}
+{#    {% endif %}#}
+
+    <h1>Tasks</h1>
+    {% if tasks %}
+        <p>You have {{ tasks|length }} tasks!</p>
+    {% endif %}
+    
+    <form method="get" action="/"> 
+        <input type="text" name="filter_title" value="{{ filter_title }}" placeholder="Search">
+        <button type="submit">Search</button>
+    </form>
+    
+    {% for task in tasks %}
+    <ul>
+        <li>{{ task.name }} : {{ task.description }} ({{ task.created_at }})</li> 
+    </ul>
+    {% empty %}
+        <p>There are no created tasks!</p>
+    {% endfor %}
+
+</body>
+</html>
