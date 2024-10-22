@@ -1,11 +1,15 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.http import HttpResponse, Http404
+
 
 from urlsAndViews.department.models import Department
 
 
 def index(request):
-    return HttpResponse('Hello Django!')
+    # url = reverse('redirect-view')
+    # return HttpResponse(f'<h1>{url}</h1>')
+    url_lazy = reverse('redirect-view')
+    return HttpResponse(f'<h1>reverse lazy</h1>')
 
 
 def view_with_int_pk(request, pk):
