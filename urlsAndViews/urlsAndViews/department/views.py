@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse, Http404
 
 from urlsAndViews.department.models import Department
 
@@ -17,11 +17,20 @@ def view_with_slug(request, slug):
     return HttpResponse(f'<h1>Department from slug: {department} </h1>')
 
 def view_with_pk_slug(request, pk, slug):
-    department = Department.objects.get(pk=pk, slug=slug)
+    # # Option 1 for error 404
+    # department = Department.objects.filter(pk=pk, slug=slug)
+    #
+    # if not department:
+    #     raise Http404
+    # return HttpResponse(f'<h1>ID: {pk} Department: {department.first()} </h1>')
+
+    # Option 2
+    department = get_object_or_404(Department, pk=pk, slug=slug)
     return HttpResponse(f'<h1>ID: {pk} Department: {department} </h1>')
 
 def view_with_name(request, variable):
-    return HttpResponse(f'<h1>View with name: {variable} </h1>')
+    # return HttpResponse(f'<h1>View with name: {variable} </h1>')
+    return render(request,'departments/name_template.html', {'variable': variable})
 
 def view_with_path(request, variable):
     return HttpResponse(f'<h1>View with path: {variable} </h1>')

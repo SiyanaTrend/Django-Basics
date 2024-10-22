@@ -8,5 +8,5 @@ urlpatterns = [
     path('<int:pk>/<slug:slug>/', views.view_with_pk_slug),
     re_path(r'^archive/(?P<archive_year>202[0-3])/$', views.view_with_regex),
     path('<variable>/', views.view_with_name), #matches untill / => dadadf
-    path('<path:variable>/', views.view_with_path),  #matches after the / as well => fsfsdf/fsdfsdfsd/fsfs
+    # path('<path:variable>/', views.view_with_path),  #matches after the / as well => fsfsdf/fsdfsdfsd/fsfs
 ]
