@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'djangoTemplatesBasics.posts.apps.PostsConfig',
+    'TemplatesForms.posts.apps.PostsConfig',
 ]
 
 MIDDLEWARE = [
@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'djangoTemplatesBasics.urls'
+ROOT_URLCONF = 'TemplatesForms.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'djangoTemplatesBasics.wsgi.application'
+WSGI_APPLICATION = 'TemplatesForms.wsgi.application'
 
 
 # Database
