@@ -12,5 +12,7 @@ def index(request):
             "height": 1.90,
         },
         "IDs": ["1223", "exe1234", "si5684"],
+        "some_text": "everything works well!",
+        "no_text": "",
     }
     return render(request, 'base.html', context)
