@@ -1,2 +1,2 @@
-# Django
- Django Basics
+# Django Basics
+ Django Basics exercises and examples
