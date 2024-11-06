@@ -1,5 +1,5 @@
 {% load static %}
-{% load markdown_extras %}
+{#{% load markdown_extras %}#}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +23,7 @@
                     {% if not post.content %}
                         {% lorem 3 p %}
                     {% else %}
-                        {{ post.content|markdown }}
+                        {{ post.content}}
                     {% endif %}
                 
                     <div class="post-meta">

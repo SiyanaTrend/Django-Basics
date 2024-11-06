@@ -12,19 +12,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Current time is: {{ current_time}}</h1>
-    <h1>Current time is: {{ current_time|date:"D d M Y" }}</h1>
-    <p>Ivan is {{ person.age }} years old and {{ person.height }}m tall.</p>
-    <p>{{ person.items }}</p>
-    <p>Show the first ID: {{ IDs.1 }}</p>
-    <p>Show the first ID: {{ IDs|join:', ' }}</p>
-    <h2>{{ some_text }} => {{ some_text|length }}symbols</h2>
-    <h2>{{ some_text|capfirst}}</h2>
-    <h2>{{ some_text|truncatechars:10 }}</h2>
-    <h2>{{ some_text|truncatewords:1 }}</h2>
-    <h2>{{ some_text|slugify|capfirst }}</h2>
-    <h3>{{ no_text|default:"Nothing here" }}</h3>
+        {% include "nav.html" %}
+        <h1>You did it!</h1>
+        
+
+{#    <h1>Current time is: {{ current_time}}</h1>#}
+{#    <h1>Current time is: {{ current_time|date:"D d M Y" }}</h1>#}
+{#    <p>Ivan is {{ person.age }} years old and {{ person.height }}m tall.</p>#}
+{#    <p>{{ person.items }}</p>#}
+{#    <p>Show the first ID: {{ IDs.1 }}</p>#}
+{#    <p>Show the first ID: {{ IDs|join:', ' }}</p>#}
+{#    <h2>{{ some_text }} => {{ some_text|length }}symbols</h2>#}
+{#    <h2>{{ some_text|capfirst}}</h2>#}
+{#    <h2>{{ some_text|truncatechars:10 }}</h2>#}
+{#    <h2>{{ some_text|truncatewords:1 }}</h2>#}
+{#    <h2>{{ some_text|slugify|capfirst }}</h2>#}
+{#    <h3>{{ no_text|default:"Nothing here" }}</h3>#}
     
+{#    {% if some_text|length < 20 %}#}
+{#        <h1>{{ some_text }}</h1>#}
+{#    {% else %}#}
+{#        <h2>No results</h2>#}
+{#    {% endif %}#}
+    
+
+    
+{#    {% lorem 2 p %}#}
+{#    {% lorem 5 w %}#}
+    
+{#    <ol>#}
+{#        {% for user in users %}#}
+{#            <li>{{ user|upper }}</li>#}
+{#        {% empty %}#}
+{#            No results#}
+{#        {% endfor %}#}
+{#    </ol>#}
+
 </body>
     <script src='https://unpkg.com/akar-icons-fonts'></script>
 </html>
