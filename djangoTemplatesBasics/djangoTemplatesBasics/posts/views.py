@@ -24,19 +24,19 @@ def dashboard(request):
             {
                 "title": "How to create Django project",
                 "author": "Maria Kirilova",
-                "content": "Follow these steps:...",
+                "content": "",
                 "created_at": datetime.now(),
             },
             {
                 "title": "How to create HTML file ",
                 "author": "Ivan Abadjiev",
-                "content": "It is the most easiest thing to do",
+                "content": "It is the **most easiest** <i>thing</i> to do",
                 "created_at": datetime.now(),
             },
             {
                 "title": "How to create CSS file",
                 "author": "",
-                "content": "You should follow my steps",
+                "content": "### You should follow my steps",
                 "created_at": datetime.now(),
             },
         ]
