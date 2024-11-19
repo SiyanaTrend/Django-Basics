@@ -1,0 +1,9 @@
+
+/djangoIntroduction/venv/Lib/site-packages/django/conf/locale/hu
+/djangoIntroduction/venv/Lib/site-packages/django/conf/locale/ia/LC_MESSAGES
+/djangoIntroduction/venv/Lib/site-packages/django/conf/locale/hy/LC_MESSAGES
+*.mo
+*.po
+*.pyc
+/djangoIntroduction/venv/Lib
+/djangoIntroduction/venv
