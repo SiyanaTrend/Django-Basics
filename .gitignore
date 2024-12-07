@@ -7,3 +7,5 @@
 *.pyc
 /djangoIntroduction/venv/Lib
 /djangoIntroduction/venv
+.idea/
+venv/
