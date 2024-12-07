@@ -9,3 +9,5 @@
 /djangoIntroduction/venv
 .idea/
 venv/
+db.sqlite3
+
