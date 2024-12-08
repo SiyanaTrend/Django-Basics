@@ -15,7 +15,8 @@
     {% include "nav.html" %}
         <h1>You did it!</h1>
     
-    <form action="/" method="get">
+    <form action="/" method="post">
+        {% csrf_token %}
         <input type="text" name="person_name"> {# person_name=the name, that we put in the input field #}
         <input type="number" name="age"> {# age=the age,that we put in the input field #}
         <button>Submit</button>
