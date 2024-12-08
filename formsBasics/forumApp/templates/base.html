@@ -17,12 +17,25 @@
     
     <form action="/" method="post">
         {% csrf_token %}
-        <input type="text" name="person_name"> {# person_name=the name, that we put in the input field #}
-        <input type="number" name="age"> {# age=the age,that we put in the input field #}
+        {{ my_form }}
+        {{ my_form.errors }}
         <button>Submit</button>
-{#        or#}
-        <input type="submit" value="Push">
     </form>
+    
+{#    <form action="/" method="get">#}
+{#        {{ my_form }}#}
+{#        <button>Submit</button>#}
+{#    </form>#}
+    
+    
+{#    <form action="/" method="post">#}
+{#        {% csrf_token %}#}
+{#        <input type="text" name="person_name"> {# person_name=the name, that we put in the input field #}
+{#        <input type="number" name="age"> {# age=the age,that we put in the input field #}
+{#        <button>Submit</button>#}
+{#        or#}
+{#        <input type="submit" value="Push">#}
+{#    </form>#}
 {#   after we push the buttons -> http://localhost:8000/?person_name=Tiho&age=45#}
     
 
