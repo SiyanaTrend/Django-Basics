@@ -14,7 +14,7 @@ class PostBaseForm(forms.ModelForm):
         # fields = ('title', 'content')
         # exclude = ['content']
         widgets = {
-            'title': forms.Textarea,
+            'title': forms.NumberInput,
         }
         help_texts = {
             'title': 'Put a title'
@@ -23,8 +23,8 @@ class PostBaseForm(forms.ModelForm):
             'title': 'This is title'
         }
         # error_messages = {
-        #     'lecturer': {
-        #         'required': 'Check if you are lecturer'
+        #     'title': {
+        #         'required': '',
         #     }
         # }
 
