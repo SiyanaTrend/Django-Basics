@@ -1,52 +1,30 @@
 from django import forms
 
+from forumApp.posts.choices import LanguageChoice
+from forumApp.posts.models import Post
 
-class PersonForm(forms.Form):
-    STATUS_CHOICES = (
-        (1, 'Draft'),
-        (2, 'Published'),
-        (3, 'Archived')
-    )
-    person_name = forms.CharField(
-        label='',
-        # initial='Hi, I am',
-        help_text='Put your first name',
-        widget=forms.TextInput(attrs={'placeholder': 'Search'}),
-        # widget=forms.Textarea(attrs={'placeholder': 'Search'}),
-        error_messages={
-            'required': 'Please enter a value',
-        },
-        required=True,
-        max_length=10,
-    )
-    age = forms.IntegerField(
-        help_text='Put your age'
-    )
-    email = forms.CharField(
-        label='',
-        # widget=forms.EmailInput(attrs={'placeholder': 'email address'}),
-        widget=forms.URLInput(attrs={'placeholder': 'URL'}),
-    )
-    is_lecturer = forms.BooleanField(
-        label='Check if you are lecturer',
+
+class PostBaseForm(forms.ModelForm):
+    lecturer = forms.BooleanField(
         required=False,
     )
+    class Meta:
+        model = Post
+        fields = "__all__"
 
-    # using ChoiceField => returns the object as a string, no matter if it is int, etc.
-    # status = forms.ChoiceField(
-    #     choices=STATUS_CHOICES,
-    # )
 
-    # using IntegerField with widget/Select => returns the object as int
-    # status = forms.IntegerField(
-    #     widget=forms.Select(choices=STATUS_CHOICES),
-    # )
-
-    checkboxes = forms.MultipleChoiceField(
-        widget=forms.CheckboxSelectMultiple,
-        choices=STATUS_CHOICES,
-    )
-
-    file = forms.FileField(
-        required=False,
-    )
+# instead of:
+# class PostForm(forms.Form):
+#     title = forms.CharField(
+#         max_length=100,
+#     )
+#     content = forms.CharField(
+#         widget=forms.Textarea,
+#     )
+#     author = forms.CharField(
+#         max_length=30,
+#     )
+#     created_at = forms.DateTimeField()
+#     languages = forms.ChoiceField(
+#         choices=LanguageChoice.choices,
+#     )
