@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from forumApp.posts.forms import PostBaseForm, PostCreateForm, PostDeleteForm, SearchForm, PostEditForm
+from forumApp.posts.forms import PostCreateForm, PostDeleteForm, SearchForm, PostEditForm
 from forumApp.posts.models import Post
 
 
