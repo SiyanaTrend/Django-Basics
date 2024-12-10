@@ -27,11 +27,15 @@ class PostBaseForm(forms.ModelForm):
         #         'required': '',
         #     }
         # }
+
+
 class PostCreateForm(PostBaseForm):
     pass
 
+
 class PostEditForm(PostBaseForm):
     pass
+
 
 class PostDeleteForm(PostBaseForm):
     def __init__(self, *args, **kwargs):
