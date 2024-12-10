@@ -3,7 +3,7 @@
 
 {% block content %}
         <div class="container">
-        {% include 'posts/search-form.html' with value='button'%}
+        {% include 'posts/search-form.html' with value='magnifier'%}
 {#        {% include 'posts/search-form.html' with value='button' only%}#}
             <div class="posts">
             {% for post in posts %}
@@ -14,7 +14,7 @@
                         {% if not post.content %}
                             {% lorem 3 p %}
                         {% else %}
-                            {{ post.content|markdown }}
+                            {{ post.content|markdown:'You should restart your project when using new custom filter.' }}
                         {% endif %}
                     
                         <div class="post-meta">

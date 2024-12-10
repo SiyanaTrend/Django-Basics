@@ -8,5 +8,6 @@ register = template.Library()
 
 
 @register.filter(name='markdown')
-def markdown_format(text):
+def markdown_format(text, only_one_param):
+    print('You can add to custom filters!', only_one_param)
     return mark_safe(markdown.markdown(text))
