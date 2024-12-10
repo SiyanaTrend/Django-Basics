@@ -14,7 +14,8 @@
                         {% if not post.content %}
                             {% lorem 3 p %}
                         {% else %}
-                            {{ post.content|markdown:'You should restart your project when using new custom filter.' }}
+                            {{ post.content|capfirst|markdown }}
+{#                            {{ post.content|markdown:'You should restart your project when using new custom filter.' }}#}
                         {% endif %}
                     
                         <div class="post-meta">
