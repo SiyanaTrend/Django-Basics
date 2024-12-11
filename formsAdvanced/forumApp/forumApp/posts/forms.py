@@ -1,6 +1,7 @@
 from django import forms
 
 from forumApp.posts.choices import LanguageChoice
+from forumApp.posts.mixin import DisableFieldsMixin
 from forumApp.posts.models import Post
 
 
@@ -38,12 +39,9 @@ class PostEditForm(PostBaseForm):
     pass
 
 
-class PostDeleteForm(PostBaseForm):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        for field in self.fields:       # disabled all fields at once
-            self.fields[field].disabled = True
+class PostDeleteForm(PostBaseForm, DisableFieldsMixin):
+    # disabled_fields = ('title', 'author')
+    disabled_fields = ('__all__',)
 
 
 class SearchForm(forms.Form):
