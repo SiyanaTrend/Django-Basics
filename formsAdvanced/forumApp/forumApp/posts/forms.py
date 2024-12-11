@@ -1,4 +1,5 @@
 from django import forms
+from django.core.exceptions import ValidationError
 
 from forumApp.posts.choices import LanguageChoice
 from forumApp.posts.mixin import DisableFieldsMixin
@@ -29,6 +30,25 @@ class PostBaseForm(forms.ModelForm):
                 'max_length': f'The title is too long. Please keep it under {Post.TITLE_MAX_LENGTH} characters.'
             },
         }
+
+    def clean_author(self):
+        author = self.cleaned_data.get('author')
+
+        if not author[0].isupper():
+            raise ValidationError('Author name should start with capital letter!')
+
+        return author
+
+    def clean(self):
+        cleaned_data = super().clean()
+
+        title = cleaned_data.get('title')
+        content = cleaned_data.get('content')
+
+        if title and content and title in content:
+            raise ValidationError("The post title cannot be included in the post content")
+
+        return cleaned_data
 
 
 class PostCreateForm(PostBaseForm):
