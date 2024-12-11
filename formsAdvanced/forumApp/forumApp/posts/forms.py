@@ -1,3 +1,4 @@
+from crispy_forms.helper import FormHelper
 from django import forms
 from django.core.exceptions import ValidationError
 from django.forms import formset_factory
@@ -100,6 +101,14 @@ class SearchForm(forms.Form):
             }
         )
     )
+
+#     example for crispy form
+#     def __init__(self, *args, **kwargs):
+#         super().__init__(*args, **kwargs)
+#
+#         self.helper = FormHelper()
+#         self.helper.form_method = 'get'
+#         self.helper.form_class = 'form-inline'
 
 class CommentForm(forms.ModelForm):
     class Meta:
