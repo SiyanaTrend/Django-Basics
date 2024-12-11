@@ -31,6 +31,14 @@ class PostBaseForm(forms.ModelForm):
             },
         }
 
+    def clean_content(self):
+        content = self.cleaned_data.get('content')
+
+        if not content[0].isupper():
+            raise ValidationError('The content should start with capital letter!')
+
+        return content
+
     def clean_author(self):
         author = self.cleaned_data.get('author')
 
@@ -49,6 +57,18 @@ class PostBaseForm(forms.ModelForm):
             raise ValidationError("The post title cannot be included in the post content")
 
         return cleaned_data
+
+    def save(self, commit=True):
+        post = super().save(commit=False)
+
+        post.title = post.title.capitalize()
+        post.content = post.content.capitalize()
+
+        if commit:
+            post.save()
+
+        return post
+
 
 
 class PostCreateForm(PostBaseForm):
