@@ -1,4 +1,5 @@
 {% extends 'common/base.html' %}
+
 {% load uppercase %}
 
 {% block content %}
@@ -13,4 +14,27 @@
         {{ my_form }}
     </form>
     
+    
+    
+{#    examples for simple from styling#}
+{#    <form>#}
+{#    {% for field in my_form %}#}
+{#        {{ field.label_tag }} {{ field }}#}
+{#        {% if field.errors %}#}
+{#            <div class='errors'>#}
+{#                {{ field.errors }}#}
+{#            </div>#}
+{#        {% endif %}#}
+{#    {% endfor %}#}
+{#    </form>#}
+{#    #}
+{#    <form>#}
+{#    {% for field in my_form %}#}
+{#        <input#}
+{#            type="{{ field.widget_type }}"#}
+{#            name="{{ field.html_name }}"#}
+{#            id="{{ field.id_for_label}}"#}
+{#        />#}
+{#    {% endfor %}#}
+{#    </form>#}
 {% endblock %}
