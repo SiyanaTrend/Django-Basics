@@ -1,2 +1,5 @@
 ## Django Basics Course /SoftUni/
- Django Basics exercises and examples
+
+The Django Basics folder contains fundamental exercises and labs focused on learning Django, a high-level Python web framework. 
+
+
